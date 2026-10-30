@@ -1,0 +1,6 @@
+*.dll
+*.exe
+*.zip
+__pycache__/
+Mod/
+Build-*/
