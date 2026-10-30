@@ -1,4 +1,4 @@
-# PBZ Gold Alert official v1.0 — source for review
+# PBZ Gold Alert official v1.0
 
 Mod page: https://www.nexusmods.com/phantombladezero/mods/150
 
