@@ -1,0 +1,13 @@
+{
+  "archive_integrity": true,
+  "extracted_checksum_files": 14,
+  "build_only": true,
+  "three_file_hashes_exact_development_V205_and_fullpack": {
+    "zz_PBZ_YellowAlert_P.pak": "b74dcd4f5e6d115877df2210d934aa226a56d30beda7f6547608565cbf8cc5b5",
+    "zz_PBZ_YellowAlert_P.ucas": "c9370e773026ed7c2c05f50b3a0c38e592a8b405132eabfb6a2153adfabad5f9",
+    "zz_PBZ_YellowAlert_P.utoc": "2c09850735d5479635b2d5f50dc608a82f174e008050c04e180d27b1f86bb4f4"
+  },
+  "no_component_split": true,
+  "temporary_build_cleaned": true,
+  "no_real_game_installation_command_run": true
+}

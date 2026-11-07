@@ -1,0 +1,477 @@
+{
+  "0": [
+    "done",
+    "Other",
+    0
+  ],
+  "1": [
+    "add",
+    "Op",
+    3
+  ],
+  "2": [
+    "sub",
+    "Op",
+    3
+  ],
+  "3": [
+    "mul",
+    "Op",
+    3
+  ],
+  "4": [
+    "div",
+    "Op",
+    3
+  ],
+  "5": [
+    "mad",
+    "Op",
+    4
+  ],
+  "6": [
+    "lerp",
+    "Op",
+    4
+  ],
+  "7": [
+    "rcp",
+    "Op",
+    2
+  ],
+  "8": [
+    "rsq",
+    "Op",
+    2
+  ],
+  "9": [
+    "sqrt",
+    "Op",
+    2
+  ],
+  "10": [
+    "neg",
+    "Op",
+    2
+  ],
+  "11": [
+    "abs",
+    "Op",
+    2
+  ],
+  "12": [
+    "exp",
+    "Op",
+    2
+  ],
+  "13": [
+    "exp2",
+    "Op",
+    2
+  ],
+  "14": [
+    "log",
+    "Op",
+    2
+  ],
+  "15": [
+    "log2",
+    "Op",
+    2
+  ],
+  "16": [
+    "sin",
+    "Op",
+    2
+  ],
+  "17": [
+    "cos",
+    "Op",
+    2
+  ],
+  "18": [
+    "tan",
+    "Op",
+    2
+  ],
+  "19": [
+    "asin",
+    "Op",
+    2
+  ],
+  "20": [
+    "acos",
+    "Op",
+    2
+  ],
+  "21": [
+    "atan",
+    "Op",
+    2
+  ],
+  "22": [
+    "atan2",
+    "Op",
+    3
+  ],
+  "23": [
+    "ceil",
+    "Op",
+    2
+  ],
+  "24": [
+    "floor",
+    "Op",
+    2
+  ],
+  "25": [
+    "fmod",
+    "Op",
+    3
+  ],
+  "26": [
+    "frac",
+    "Op",
+    2
+  ],
+  "27": [
+    "trunc",
+    "Op",
+    2
+  ],
+  "28": [
+    "clamp",
+    "Op",
+    4
+  ],
+  "29": [
+    "min",
+    "Op",
+    3
+  ],
+  "30": [
+    "max",
+    "Op",
+    3
+  ],
+  "31": [
+    "pow",
+    "Op",
+    3
+  ],
+  "32": [
+    "round",
+    "Op",
+    2
+  ],
+  "33": [
+    "sign",
+    "Op",
+    2
+  ],
+  "34": [
+    "step",
+    "Op",
+    3
+  ],
+  "35": [
+    "random",
+    "Op",
+    2
+  ],
+  "36": [
+    "noise",
+    "Op",
+    0
+  ],
+  "37": [
+    "cmplt",
+    "Op",
+    3
+  ],
+  "38": [
+    "cmple",
+    "Op",
+    3
+  ],
+  "39": [
+    "cmpgt",
+    "Op",
+    3
+  ],
+  "40": [
+    "cmpge",
+    "Op",
+    3
+  ],
+  "41": [
+    "cmpeq",
+    "Op",
+    3
+  ],
+  "42": [
+    "cmpneq",
+    "Op",
+    3
+  ],
+  "43": [
+    "select",
+    "Op",
+    4
+  ],
+  "44": [
+    "addi",
+    "Op",
+    3
+  ],
+  "45": [
+    "subi",
+    "Op",
+    3
+  ],
+  "46": [
+    "muli",
+    "Op",
+    3
+  ],
+  "47": [
+    "divi",
+    "Op",
+    3
+  ],
+  "48": [
+    "clampi",
+    "Op",
+    4
+  ],
+  "49": [
+    "mini",
+    "Op",
+    3
+  ],
+  "50": [
+    "maxi",
+    "Op",
+    3
+  ],
+  "51": [
+    "absi",
+    "Op",
+    2
+  ],
+  "52": [
+    "negi",
+    "Op",
+    2
+  ],
+  "53": [
+    "signi",
+    "Op",
+    2
+  ],
+  "54": [
+    "randomi",
+    "Op",
+    2
+  ],
+  "55": [
+    "cmplti",
+    "Op",
+    3
+  ],
+  "56": [
+    "cmplei",
+    "Op",
+    3
+  ],
+  "57": [
+    "cmpgti",
+    "Op",
+    3
+  ],
+  "58": [
+    "cmpgei",
+    "Op",
+    3
+  ],
+  "59": [
+    "cmpeqi",
+    "Op",
+    3
+  ],
+  "60": [
+    "cmpneqi",
+    "Op",
+    3
+  ],
+  "61": [
+    "bit_and",
+    "Op",
+    3
+  ],
+  "62": [
+    "bit_or",
+    "Op",
+    3
+  ],
+  "63": [
+    "bit_xor",
+    "Op",
+    3
+  ],
+  "64": [
+    "bit_not",
+    "Op",
+    3
+  ],
+  "65": [
+    "bit_lshift",
+    "Op",
+    3
+  ],
+  "66": [
+    "bit_rshift",
+    "Op",
+    3
+  ],
+  "67": [
+    "logic_and",
+    "Op",
+    3
+  ],
+  "68": [
+    "logic_or",
+    "Op",
+    3
+  ],
+  "69": [
+    "logic_xor",
+    "Op",
+    3
+  ],
+  "70": [
+    "logic_not",
+    "Op",
+    2
+  ],
+  "71": [
+    "f2i",
+    "Op",
+    2
+  ],
+  "72": [
+    "i2f",
+    "Op",
+    2
+  ],
+  "73": [
+    "f2b",
+    "Op",
+    2
+  ],
+  "74": [
+    "b2f",
+    "Op",
+    2
+  ],
+  "75": [
+    "i2b",
+    "Op",
+    2
+  ],
+  "76": [
+    "b2i",
+    "Op",
+    2
+  ],
+  "77": [
+    "inputdata_float",
+    "Input",
+    3
+  ],
+  "78": [
+    "inputdata_int32",
+    "Input",
+    3
+  ],
+  "79": [
+    "inputdata_half",
+    "Input",
+    3
+  ],
+  "80": [
+    "inputdata_noadvance_float",
+    "Input",
+    3
+  ],
+  "81": [
+    "inputdata_noadvance_int32",
+    "Input",
+    3
+  ],
+  "82": [
+    "inputdata_noadvance_half",
+    "Input",
+    3
+  ],
+  "83": [
+    "outputdata_float",
+    "Output",
+    3
+  ],
+  "84": [
+    "outputdata_int32",
+    "Output",
+    3
+  ],
+  "85": [
+    "outputdata_half",
+    "Output",
+    3
+  ],
+  "86": [
+    "acquireindex",
+    "IndexGen",
+    2
+  ],
+  "87": [
+    "external_func_call",
+    "ExtFnCall",
+    0
+  ],
+  "88": [
+    "exec_index",
+    "Op",
+    1
+  ],
+  "89": [
+    "noise2D",
+    "Other",
+    0
+  ],
+  "90": [
+    "noise3D",
+    "Other",
+    0
+  ],
+  "91": [
+    "enter_stat_scope",
+    "Stat",
+    1
+  ],
+  "92": [
+    "exit_stat_scope",
+    "Stat",
+    0
+  ],
+  "93": [
+    "update_id",
+    "RWBuffer",
+    3
+  ],
+  "94": [
+    "acquire_id",
+    "RWBuffer",
+    3
+  ]
+}

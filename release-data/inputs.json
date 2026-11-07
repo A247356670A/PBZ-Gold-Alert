@@ -1,0 +1,42 @@
+{
+  "Build-And-Install.ps1": {
+    "bytes": 8433,
+    "sha256": "c863cba0113b33cf1e8cb70b33d936fcd12758d6dd9da123ccfc175138052ceb"
+  },
+  "Extract.cs": {
+    "bytes": 3994,
+    "sha256": "e18769d82b082e587e01e26d54082cb371d57de301e6b0c0393aad75b232024a"
+  },
+  "Install.cmd": {
+    "bytes": 231,
+    "sha256": "8eafbfdc1786ab62deae61f78448676763eead5d41e710993e6eaaa251633dbf"
+  },
+  "key.txt": {
+    "bytes": 64,
+    "sha256": "db7650b4e50e481847ae43f88b454a3e72ff5e7b42f097a5df8903b6b116347b"
+  },
+  "oo2core_9_win64.dll": {
+    "bytes": 637952,
+    "sha256": "6f5d41a7892ea6b2db420f2458dad2f84a63901c9a93ce9497337b16c195f457"
+  },
+  "payload.bin": {
+    "bytes": 8481144,
+    "sha256": "43f7415390d274c054c238b8879ea272affda5e49d69f55f0a8ca35d7885d60d"
+  },
+  "recipe.json": {
+    "bytes": 3101,
+    "sha256": "b31115ff82ba6bf549dc6b790fd88f92ea7f87e741aadca5699a8561566c8387"
+  },
+  "Select-Game.ps1": {
+    "bytes": 1334,
+    "sha256": "a94866d831e01b566ffb16cd7721004b7686465a52c8693a4a87602ff081c4bc"
+  },
+  "zz_PBZ_YellowAlert_P.pak": {
+    "bytes": 580785,
+    "sha256": "b74dcd4f5e6d115877df2210d934aa226a56d30beda7f6547608565cbf8cc5b5"
+  },
+  "zz_PBZ_YellowAlert_P.utoc": {
+    "bytes": 284686,
+    "sha256": "2c09850735d5479635b2d5f50dc608a82f174e008050c04e180d27b1f86bb4f4"
+  }
+}

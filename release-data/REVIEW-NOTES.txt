@@ -1,0 +1,11 @@
+﻿PBZ Gold Alert Official V2.0 Combined — Review and reproduction
+Source is the unchanged outputs/PBZ-Gold-Alert-v2.0.5/Mod triplet. No native containers were repacked and no audio/gameplay/visual/timing edits were made. This does not claim to fix the reported runtime issues.
+Fullpack contains three resources and text documentation only. Installer contains readable CMD/PowerShell/C# source, uncompressed delta data, resource metadata, a game-resource key and the existing third-party oo2core_9_win64.dll decoder. No custom compiled executable is bundled; no download occurs. Extract.cs is compiled locally using Windows PowerShell Add-Type. The third-party decoder is closed-source; its source and a verified redistribution licence are not supplied.
+To reconstruct without installing, fully extract Installer and run under 64-bit Windows PowerShell 5.1:
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\Build-And-Install.ps1 -GameExe "<actual PBZ.exe path>" -BuildOnly -OutputDirectory "<new writable output directory>"
+Compare the three output hashes with Fullpack/SHA256SUMS.txt and development V2.0.5/SHA256SUMS.txt.
+Supported original ProjectPBZ-Windows.utoc SHA256:
+d5c3764cdae2030361a7fa8ed1eb204787c77e767df92bbe947763b4a2d0186b
+Normal installation reconstructs/verifies before backing up known previous combined/split mod files under the game root's ModBackups and installing the triplet. It attempts rollback on copy/verification failure. BuildOnly does not install to the game. Original game containers are not changed.
+payload.bin is uncompressed data, not a disguised archive. No passwords or nested archives are used. Scripts/DLLs may still require Nexus moderation. No antivirus or guaranteed approval claim is made. Official guidance: https://help.nexusmods.com/article/117-why-has-my-mod-been-quarantined
+This release has not been uploaded to Nexus or GitHub. The old public repository has not been updated to V2.0.

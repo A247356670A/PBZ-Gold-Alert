@@ -1,0 +1,11 @@
+{
+  "old_split_nine_and_combined_triplet_backed_up": true,
+  "installs_exactly_three_files": true,
+  "unrelated_mod_preserved": true,
+  "partial_delete_failure_restores_originals": true,
+  "game_running_guard": true,
+  "unsupported_game_version_stops": true,
+  "tampered_payload_stops": true,
+  "synthetic_encrypted_base_and_patches_match": true,
+  "no_real_game_paths_mutated": true
+}

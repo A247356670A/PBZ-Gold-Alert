@@ -1,0 +1,113 @@
+﻿封装修订说明 / Packaging revision
+用户反馈拆分正式版仍有拳套反击/特效触发和声音时序问题，最新要求暂停修复并直接打包V2.0.5。本合并版不修改V2.0.5任何资源字节、声音、时间或代码，不宣称修复上述运行问题。Fullpack直接复制原文件，Installer还原后必须与原文件SHA256一致。
+Following feedback about counter/effect triggering and audio timing, the user requested packaging V2.0.5 unchanged before further fixes. This combined build changes no V2.0.5 resource bytes, sounds, timing or code and does not claim to fix those runtime issues. Fullpack copies the original files; Installer output must match their SHA256 hashes exactly.
+
+PBZ Gold Alert — Official V2.0 完整更新日志 / Complete Changelog
+发布日期 / Release date: 2026-11-07
+封装 / Distribution: Combined（合并三件套）
+正式版来源 / Release source: development V2.0.5
+
+中文：V2.0相对于正常配色Official v1.1的全部变更
+
+攻击预警
+- 保留参考《绝区零》风格的金色十字黄光、单一中心、固定长度淡出和原有预警音效。
+- 为黑光攻击加入蓝紫色45度X形预警，光效移至头顶附近，并使用穿透显示以降低人物模型遮挡。
+- 调整紫光亮芯、光晕与颜色；相对于v1.6.10长度和宽度均按80%等比缩小，保留长宽比例。
+- 两根斜向光条使用相同寿命并同步消失，修复其中一根提前消失的问题。
+- 调整全屏黑光材质与半透明特效的处理顺序，保留场景变暗/去色，同时使紫光尽量保留蓝紫色。
+- 黑光预警声音和光效相对于原时间提前100ms；原时间不足100ms的限制在招式起点。
+- 采用用户确认的绝区零游戏原始紫光提示音，替换误选素材，修复紫光无声。
+- 移除会截断声音的结束停止事件，保留完整约2.067秒紫光提示音。
+- 最终版沿用已确认可正常播放的固定提示音；早期两种原声随机播放的实验未作为当前功能发布。
+- 修复早期增加组件引起的第一章三面Boss区域闪退，保留后续稳定的原生组件布局。
+
+铁拳套特殊招架与反击
+- 使用L1+R2成功特殊招架黑光后进入自动反击分支，解除该黑光分支原有距离与飞行物排除条件。
+- 调整成功接触事件的处理顺序，避免原标签/距离判断提前拦截；覆盖Success、Normal与Continuous等有效接触，排除PreAttack并防止反击重入。
+- 仍需成功招架；不增加自动输入、不扩大招架窗口。不把“自动反击”理解为自动防御。
+- 保留反击基础伤害、原动画时间轴、拳意与次数返还流程；普通攻击沿用其余原判定。
+- 每次黑光特殊招架成功后，将杀气一次性结算为满槽30%；原杀气低于30%时也设为30%。此效果不是按当前值扣减70%，也不持续锁定后续杀气变化。
+- 新增用户确认的“大狗紫光攻击被成功招架后”的后半段音效，素材取自绝区零游戏原始资源，不使用录屏混音。
+- 在成功接触时触发音效，删除反击动画时间轴内的重复触发，保留完整约6.213秒声音；本版不继续移动触发时间，开头与预警仍可能重叠。
+- 增强成功招架声音：先修正音频本体增益，再追加1.5倍线性增益并作柔限幅保护。限幅后实际响度增幅小于50%，不将增益参数等同于听感百分比。
+- 招架、后续蓄力、拳风、出拳和命中爆发的指定光层改为淡金色；补齐出拳发光材质参数，并为拳套命中爆发使用隔离副本，避免给敌人共享特效全局染色。
+- 仅简体中文铁拳套说明末尾追加：“跟...根本没有这样的拳套!”；保留原有文本及高亮。
+
+发布与安装
+- 提供Installer小体积本地还原包及Fullpack完整纯资源包，两者最终安装资源一致。
+- 按用户最新要求，直接使用开发V2.0.5原始三件套，预警与拳套增强合并安装。
+- Fullpack仅含V2.0.5原始3个.pak/.utoc/.ucas资源及说明/校验文本，不含安装脚本或DLL。
+- Installer手动选择PBZ.exe，无预设目录；一次还原并安装原始三个文件，校验游戏资源版本及生成文件。
+- Installer先还原及校验，再备份和替换旧MOD；安装失败尝试回滚。无需Python或在线下载。
+- 开发V2.0.5及历史版本保留，后续开发继续V2.0.6；正式版单独命名V2.0。
+- 本版沿正常红黄配色开发线；Official1.2的红黄换色预设为独立分支，不合并进本版。
+
+测试边界
+- 原生资源打包、解包逐块校验，以及Installer本地还原一致性可离线验证。
+- 尚未收到V2.0.5“固定30%杀气”和V2.0.4最后一段出拳补色的实机确认，也未完成所有Boss/所有黑光招式的实机覆盖。远距离反击是否命中仍受原动作和命中范围约束。
+- 对使用相同音频库、攻击预警、相关敌人招式、拳套能力/特效或简体中文Game.locres的其他MOD可能冲突。
+
+English: all changes from the standard-color Official v1.1 branch
+
+Attack warnings
+- Retains the Zenless Zone Zero-inspired golden yellow-warning cross, shared center, fixed-length fade and existing warning audio.
+- Adds blue-violet 45-degree X warnings for black-flash attacks, positioned near the head with depth-independent rendering to reduce model occlusion.
+- Refines the violet core, glow and color. Both length and width are scaled to 80% of v1.6.10 while preserving proportions.
+- Synchronizes the two diagonal bars' lifetimes and disappearance.
+- Reorders the blackout material and translucent effects to retain scene darkening/desaturation while helping the X keep its violet color.
+- Advances black-flash warning audio and visuals by 100ms, clamping events to the start of the move where necessary.
+- Uses the confirmed original Zenless Zone Zero warning asset, replaces incorrect candidates, and fixes silent warnings.
+- Removes end-of-effect stop events that truncated playback; retains the full approximately 2.067-second warning sound.
+- Ships the fixed warning sound confirmed to play correctly. The early random two-sound experiment is not a current release feature.
+- Fixes the early Chapter 1 three-faced Boss-area crash caused by an added component, retaining the later stable native component layout.
+
+Iron gauntlet parry and counterattack
+- Successful L1+R2 special parries against black-flash attacks enter the counterattack branch without that branch's previous distance/projectile exclusions.
+- Dispatches valid success contacts before the old tag/distance gates; handles Success, Normal and Continuous contacts, ignores PreAttack, and prevents counter re-entry.
+- Still requires a successful player-timed parry. Does not automate defensive input or widen the parry window.
+- Preserves base counter damage, animation timing, fist-spirit gain and charge-refund flow; other incoming attacks retain their remaining original rules.
+- Sets Sha Chi once to 30% of maximum after each successful black-flash special parry, including raising a lower value to 30%. This is neither a 70% deduction from the current value nor a continuous meter lock.
+- Adds the confirmed follow-up sound from the large dog's successfully parried violet attack, using original Zenless Zone Zero game assets rather than recorded audio.
+- Triggers success audio on contact, removes the duplicate animation-timeline event, and retains the full approximately 6.213-second sound. Trigger timing is unchanged in this release, so its beginning may still overlap the warning.
+- Boosts the actual success audio, then applies a further 1.5x linear gain with soft peak limiting. Actual loudness increases by less than 50% after limiting; gain settings are not presented as exact perceived-volume percentages.
+- Recolors selected parry, charge, wind, punch and impact layers pale gold. Adds the missed punch emissive override and an isolated impact-effect copy instead of globally recoloring shared enemy effects.
+- Appends “跟...根本没有这样的拳套!” to the Simplified Chinese gauntlet description, preserving the original text and highlights.
+
+Distribution and installation
+- Supplies a compact local-reconstruction Installer and a complete resource-only Fullpack, producing the same installed resources.
+- Uses the original development V2.0.5 triplet unchanged, installing alerts and gauntlet features together as requested.
+- Fullpack contains the three original V2.0.5 .pak/.utoc/.ucas files plus documentation/checksums, without installer scripts or DLLs.
+- Installer asks for PBZ.exe without a preselected directory and reconstructs/installs the original triplet with game-version and output verification.
+- Reconstructs and verifies before backing up/replacing old mod files, with rollback on installation failure. Requires no Python or online download.
+- Preserves development V2.0.5 and historical outputs. Subsequent development continues at V2.0.6; this release is separately named V2.0.
+- Follows the standard-color branch. The Official1.2 swapped-color preset remains a separate branch.
+
+Validation scope
+- Native container round trips, per-chunk equality and local Installer reconstruction can be checked offline.
+- The final V2.0.5 fixed-30% settlement and V2.0.4 final punch-color additions have not yet received in-game confirmation. All Bosses/moves have not been exhaustively tested. Actual ranged counter hits remain limited by the original animation and hit range.
+- Other mods that replace the same audio libraries, attack alerts, affected enemy moves, gauntlet abilities/effects or Simplified Chinese Game.locres may conflict.
+
+开发版本沿革 / Development lineage
+v1.6.0: 黑光紫X与专用音频原型 / Initial black-flash violet X and dedicated-audio prototype.
+v1.6.1: 早期紫光显示与声音基线 / Early working display/audio baseline.
+v1.6.2: 音量及黑屏保留实验，出现三面Boss区域闪退 / Volume/blackout experiment; introduced the Boss-area crash.
+v1.6.3: 恢复原生组件布局，修复闪退 / Restored native component layout to address the crash.
+v1.6.4: 提升实际声音、放大紫光、穿透显示、提前100ms / Audio gain, larger X, depth-independent display, 100ms advance.
+v1.6.5–1.6.6: 原始音频随机候选实验、加粗及头顶位置 / Random original-audio experiments, thicker bars and head offset.
+v1.6.7: 音频A/B定位，选定可正常播放的固定版本 / Audio A/B diagnosis; selected the working fixed version.
+v1.6.8: 紫X同步消失 / Synchronized X disappearance.
+v1.6.9: 黑光拳套自动反击初版 / Initial black-flash gauntlet counter branch.
+v1.6.10: 修复接触触发分支，预警声音完整播放 / Contact-dispatch fix and complete warning playback.
+v1.6.11: 紫光80%缩放、颜色及黑屏材质顺序 / 80% X scaling, violet color and blackout-material order.
+v1.6.12: 确认并加入成功招架原始音频，移除重复触发 / Confirmed success audio and duplicate-event removal.
+V2.0.1: 成功招架音频Bank增益尝试 / Success-sound bank-gain adjustment.
+V2.0.2: 实际PCM增益、拳套文字、首段淡金色 / PCM gain, gauntlet description and initial pale-gold phase.
+V2.0.3: 后续蓄力/出拳资源补色、成功音追加增益及柔限幅 / Follow-up FX recoloring and further soft-limited success gain.
+V2.0.4: 补出拳发光参数、隔离金色命中爆发 / Punch emissive override and isolated golden impact effect.
+V2.0.5: 黑光拳套特殊招架后固定满槽30% / Fixed 30%-of-maximum post-parry Sha Chi settlement.
+Official V2.0 Combined: 直接使用V2.0.5原始三件套，制作两种安装包 / Original V2.0.5 triplet unchanged, combined release in two distribution formats.
+
+历史正式版 / Earlier official releases
+Official v1.0: 基于开发v1.5.0的最初正式版 / Initial release based on development v1.5.0.
+Official v1.1: 基于开发v1.5.7，黄光形状、固定长度淡出与金色色调细调；Installer及纯资源封装 / Development v1.5.7 snapshot with refined yellow cross, fixed-size fade, golden color, and Installer/resource distributions.
+Official1.2: 指定编辑器预设的红黄预警换色，模仿燕云十六声操作逻辑；独立于V2.0正常配色线 / Separate swapped red/yellow editor preset inspired by Where Winds Meet, outside the V2.0 standard-color branch.

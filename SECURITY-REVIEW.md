@@ -1,36 +1,42 @@
-# Runtime behavior and third-party dependency
+# Runtime behavior — Official V2.0 Combined
 
-## Entry point
+## Entry and workflow
 
-Install.cmd launches local Windows PowerShell with -STA and -ExecutionPolicy Bypass to run the bundled local Build-And-Install.ps1. It does not change the persisted execution policy. It does not download or execute remote scripts.
+`Install.cmd` launches the system's Windows PowerShell in STA mode with a process-local `ExecutionPolicy Bypass` and the bundled local script. It does not change the persisted execution policy. The first-party source makes no network requests.
 
-## Behavior
+1. Ask the user to select PBZ.exe, or accept `-GameExe`. Walk parent directories to locate the original game TOC; no default game path is configured. The chosen executable is not launched.
+2. Verify the TOC SHA256. Normal installation stops if PBZ is running. Validate the supplied source/data using `inputs.json` before compiling/loading the extraction helper.
+3. Compile `Extract.cs` with `Add-Type`. Set this process's DLL search directory to the extracted release folder.
+4. Read original IoStore TOC/UCAS partitions, decrypt blocks with .NET AES, and call the third-party decoder only for Oodle-compressed blocks.
+5. Reconstruct a new UCAS in a GUID-named staging folder under the extracted installer. Apply literal/tail/sparse patch data from the uncompressed payload and verify the full output hashes.
+6. `-BuildOnly` copies the three verified files to the explicitly requested new output directory and does not install to the game.
+7. Normal installation checks PBZ again, then copies and verifies known previous mod files into a unique `ModBackups/PBZ-Gold-Alert-V2.0-*` directory in the game root, outside Paks. It removes those known previous files and installs exactly the combined triplet under `ProjectPBZ/Content/Paks/~mods`.
+8. On installation-copy/verification failure, attempt restoration from the backups, checking restored hashes. If a file cannot be restored, report the backup location. Clean the GUID-named local staging folder on exit.
 
-1. Show a local file picker for PBZ.exe, or accept -GameExe for reproducible testing.
-2. Find the game resource directory by walking parent directories. No fixed default game path is used.
-3. Verify the game TOC SHA-256 against recipe.json; stop on a different build.
-4. Compile Extract.cs with PowerShell Add-Type and set the DLL search directory to the unpacked package folder.
-5. Read the original game's IoStore TOC and split UCAS files. Decrypt selected blocks with .NET AES and decompress Oodle blocks through OodleLZ_Decompress.
-6. Reconstruct a staged UCAS from local data, apply binary audio patches, and verify the entire result's SHA-256.
-7. In normal installation, back up the existing three named mod files under the game's ModBackups directory, then copy the verified files into ProjectPBZ/Content/Paks/~mods. BuildOnly stops before that step.
-8. Remove the installer-generated patch temporary file and empty staging directory on success.
+## Exact overwrite/removal scope
 
-The bundled scripts contain no network requests, telemetry, scheduled tasks, services, registry persistence, privilege-elevation request, credential access or process injection. The selected game executable is used to locate resources; it is not launched by the installer. Get-Process is used to check whether the game is running. These statements describe the provided first-party source; they are not an independent security certification of the native dependency.
+Only `.pak`, `.utoc` and `.ucas` files using these exact stems are backed up/replaced/removed:
 
-## Precompiled third-party dependency
+- `zz_PBZ_YellowAlert_P`
+- `zz_PBZ_GauntletCounter_P`
+- `zz_PBZ_V20_SharedAudio_P`
+- `zz_PBZ_V20_AttackAlerts_P`
+- `zz_PBZ_V20_Gauntlet_P`
 
-Filename: oo2core_9_win64.dll
-SHA-256: 6f5d41a7892ea6b2db420f2458dad2f84a63901c9a93ce9497337b16c195f457
-Size: 637952 bytes
-Authenticode inspection on this machine: NotSigned.
-Purpose: call OodleLZ_Decompress to read compressed local game resource blocks.
+The last three remove the superseded split V2.0 package. Other mod filenames and original game containers are not modified. The installer reads the original game containers; it does not patch PBZ.exe, saves, registry startup items, services or scheduled tasks, request elevation, collect credentials, inject into a process or download code. `Get-Process` is used only for the running-game guard. These are statements about the first-party scripts, not an independent certification of the native DLL.
 
-This binary was copied from the project's existing tools/oo2core_9_win64.dll. Its original upstream download provenance and redistribution permission have not been independently established in this review preparation. It is not contained in the original retoc.zip inspected here, and retoc's license is not being asserted to cover this DLL. Its source is not available as part of this project. The native DLL remains a separate item for moderator review.
+## Third-party native binary
 
-## Compressed payload disclosure
+`oo2core_9_win64.dll`: 637,952 bytes; SHA256:
 
-The uploaded package includes two gzip-compressed raw data blobs. Nexus lists nested archives among quarantine causes. No VirusTotal result or exact scanner reason has been obtained here; this report does not assert that the quarantine is a false positive. Please review the original upload and advise whether uncompressed data or a different distribution format is required.
+`6f5d41a7892ea6b2db420f2458dad2f84a63901c9a93ce9497337b16c195f457`.
 
-## Local verification
+It exposes `OodleLZ_Decompress` for reading the matching local game. This is the same existing project decoder identified in the earlier V1.0 review. It is third-party closed-source code, not a first-party build output. Its source, original upstream provenance and redistribution permission are not independently established by this repository. Do not infer a licence for this binary from any source-file licence. Fullpack does not contain it.
 
-The release reconstruction was previously tested with BuildOnly against the matching local game build. The three resulting files matched the complete development build's SHA-256. Package identity is recorded in RELEASE-INVENTORY.json. This is integrity/reproduction evidence, not evidence of an antivirus clean verdict.
+## Packaging and validation
+
+The current Installer uses uncompressed `payload.bin` and a single outer ZIP, replacing the earlier V1.0 gzip payload layout. No nested archives, passwords or renamed compressed blobs are used. The complete Fullpack contains only the original V2.0.5 resource triplet and text files, without scripts or DLLs.
+
+`RELEASE-INVENTORY.json` records all archive and installer-file hashes. Local reconstruction of the extracted Installer matched every V2.0.5 resource hash. Isolated fixture tests covered backups of the old nine split files and old combined triplet, installation of exactly three files, unrelated mod preservation, locked-file rollback, game-running/version-mismatch/tampered-payload rejection and staging cleanup. Fixture game-process queries were simulated; no actual game installation was performed by those checks.
+
+This does not assert a clean antivirus verdict, identify an unverified quarantine cause, or treat the previous V1.0 approval as approval of V2.0. Both the updated installer and its native dependency remain subject to Nexus's review.

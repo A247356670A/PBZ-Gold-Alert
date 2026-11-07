@@ -1,91 +1,137 @@
 {
+  "release": "Official V2.0 Combined",
+  "source_development": "V2.0.5",
   "mod_page": "https://www.nexusmods.com/phantombladezero/mods/150",
-  "uploaded_release": "official v1.0",
-  "release_archive_sha256": "15f92a4c4ca1b5786154ded647b5807455b139e0b20ac692664d4a88df4ec6b9",
-  "release_files": [
+  "packages": [
     {
-      "file": "audio-patches.gz",
-      "bytes": 736050,
-      "sha256": "cdd7a3b4ae37a0dffeb02ce9cb8273f4da936db237e548ffe82e80f06f362beb",
-      "kind": "compressed payload data"
+      "kind": "Fullpack",
+      "file": "PBZ-Gold-Alert-Official-V2.0-Combined-Fullpack.7z",
+      "bytes": 929358746,
+      "sha256": "b69beecdbeb5c99ca2628c1a945de979115439362f5e474ffe78ddadebb43d6e",
+      "archive_integrity_test_passed": true
     },
     {
+      "kind": "Installer",
+      "file": "PBZ-Gold-Alert-Official-V2.0-Combined-Installer.zip",
+      "bytes": 4377405,
+      "sha256": "6cadeea79e1b449080565edd53fab8197ffc671f686d177950c32d7003ffa5a1",
+      "archive_integrity_test_passed": true
+    }
+  ],
+  "release_files": [
+    {
       "file": "Build-And-Install.ps1",
-      "bytes": 3326,
-      "sha256": "8b6857c4666a0a27a87095c30635028d84b3d5ab840c4205686bad975595ceaa",
-      "kind": "installer source"
+      "bytes": 8433,
+      "sha256": "c863cba0113b33cf1e8cb70b33d936fcd12758d6dd9da123ccfc175138052ceb",
+      "kind": "first-party installer source",
+      "source_path": "installer/Build-And-Install.ps1"
+    },
+    {
+      "file": "CHANGELOG.txt",
+      "bytes": 12533,
+      "sha256": "c598fa5238182dfae63a6935b867a692c9319f5f6b011c8170fc5c8e587e8e2a",
+      "kind": "release data/documentation",
+      "source_path": null
     },
     {
       "file": "Extract.cs",
-      "bytes": 3218,
-      "sha256": "edf6f02fa5f84a1a207599da35fd4f37701036629d195021df3e36f5a8b9e076",
-      "kind": "installer source"
+      "bytes": 3994,
+      "sha256": "e18769d82b082e587e01e26d54082cb371d57de301e6b0c0393aad75b232024a",
+      "kind": "first-party installer source",
+      "source_path": "installer/Extract.cs"
     },
     {
-      "file": "Install-Update.ps1",
-      "bytes": 2924,
-      "sha256": "1ae34e64ab64fa36cf322d7b93dec37783808452439b6760e1e3a8798e8974ff",
-      "kind": "installer source"
+      "file": "inputs.json",
+      "bytes": 1335,
+      "sha256": "00bd86ceaadf1da86397abc6b0236722f3fcc405bf5a1afcc82f98239bb88869",
+      "kind": "release data/documentation",
+      "source_path": null
     },
     {
       "file": "Install.cmd",
-      "bytes": 114,
-      "sha256": "4522af182c8ace4e9d86021445d77e57c203facfc1b34a839fc9df457ca7854f",
-      "kind": "installer source"
+      "bytes": 231,
+      "sha256": "8eafbfdc1786ab62deae61f78448676763eead5d41e710993e6eaaa251633dbf",
+      "kind": "first-party installer source",
+      "source_path": "installer/Install.cmd"
     },
     {
       "file": "key.txt",
       "bytes": 64,
       "sha256": "db7650b4e50e481847ae43f88b454a3e72ff5e7b42f097a5df8903b6b116347b",
-      "kind": "data/documentation"
+      "kind": "release data/documentation",
+      "source_path": null
     },
     {
       "file": "oo2core_9_win64.dll",
       "bytes": 637952,
       "sha256": "6f5d41a7892ea6b2db420f2458dad2f84a63901c9a93ce9497337b16c195f457",
-      "kind": "third-party native binary"
+      "kind": "third-party native decoder",
+      "source_path": null
     },
     {
-      "file": "prefix.gz",
-      "bytes": 354753,
-      "sha256": "f5731f03dd922f88933054fc53a139b1eab639d304b985b8b8f13e6e75f772ae",
-      "kind": "compressed payload data"
+      "file": "payload.bin",
+      "bytes": 8481144,
+      "sha256": "43f7415390d274c054c238b8879ea272affda5e49d69f55f0a8ca35d7885d60d",
+      "kind": "release data/documentation",
+      "source_path": null
     },
     {
       "file": "README.txt",
-      "bytes": 1255,
-      "sha256": "55959735674e4e2d403811f0ae496698963ad66584008d0ccd7b7cd90743afcf",
-      "kind": "data/documentation"
+      "bytes": 3687,
+      "sha256": "a5ab98f50e65b6332a1e46b43b179174a6af40f2f8533a91df28a5320caa8444",
+      "kind": "release data/documentation",
+      "source_path": null
     },
     {
       "file": "recipe.json",
-      "bytes": 278,
-      "sha256": "7294d15376466bb55d9112fd3ef33c2374b41c689433f7ccae30a271f4e4b133",
-      "kind": "data/documentation"
+      "bytes": 3101,
+      "sha256": "b31115ff82ba6bf549dc6b790fd88f92ea7f87e741aadca5699a8561566c8387",
+      "kind": "release data/documentation",
+      "source_path": null
+    },
+    {
+      "file": "REVIEW-NOTES.txt",
+      "bytes": 1958,
+      "sha256": "d499181c3e60ac92a2ff323b2e8c3c24e8f3bab267cda429bd76004ad3e6635b",
+      "kind": "release data/documentation",
+      "source_path": null
     },
     {
       "file": "Select-Game.ps1",
       "bytes": 1334,
       "sha256": "a94866d831e01b566ffb16cd7721004b7686465a52c8693a4a87602ff081c4bc",
-      "kind": "installer source"
+      "kind": "first-party installer source",
+      "source_path": "installer/Select-Game.ps1"
     },
     {
       "file": "SHA256SUMS.txt",
-      "bytes": 290,
-      "sha256": "b8a770475cc6213a7097f4675bec93ea81e3176ecafbda81c1969681eb3a5daf",
-      "kind": "data/documentation"
+      "bytes": 1156,
+      "sha256": "6d44d1fd93556c676c0649517e4cf79aafcfd87401352ac5a7f42eae0117b7aa",
+      "kind": "release data/documentation",
+      "source_path": null
     },
     {
       "file": "zz_PBZ_YellowAlert_P.pak",
-      "bytes": 347,
-      "sha256": "75e7144577253917f6da7312ef5e585b12fb728226a22b0938323751a6b555cd",
-      "kind": "data/documentation"
+      "bytes": 580785,
+      "sha256": "b74dcd4f5e6d115877df2210d934aa226a56d30beda7f6547608565cbf8cc5b5",
+      "kind": "release data/documentation",
+      "source_path": null
     },
     {
       "file": "zz_PBZ_YellowAlert_P.utoc",
-      "bytes": 144773,
-      "sha256": "577140e170a32a288ff0aeb224e35ba3040b2f36de51a7877df887086e85e630",
-      "kind": "data/documentation"
+      "bytes": 284686,
+      "sha256": "2c09850735d5479635b2d5f50dc608a82f174e008050c04e180d27b1f86bb4f4",
+      "kind": "release data/documentation",
+      "source_path": null
     }
-  ]
+  ],
+  "reconstructed_files_sha256": {
+    "zz_PBZ_YellowAlert_P.pak": "b74dcd4f5e6d115877df2210d934aa226a56d30beda7f6547608565cbf8cc5b5",
+    "zz_PBZ_YellowAlert_P.ucas": "c9370e773026ed7c2c05f50b3a0c38e592a8b405132eabfb6a2153adfabad5f9",
+    "zz_PBZ_YellowAlert_P.utoc": "2c09850735d5479635b2d5f50dc608a82f174e008050c04e180d27b1f86bb4f4"
+  },
+  "game_toc_sha256": "d5c3764cdae2030361a7fa8ed1eb204787c77e767df92bbe947763b4a2d0186b",
+  "original_development_triplet_byte_exact": true,
+  "containers_repacked": false,
+  "upload_status": "The repository update does not itself upload any file to Nexus."
 }

@@ -1,0 +1,12 @@
+{
+  "shipped_source_byte_exact": true,
+  "shipped_files": [
+    "Build-And-Install.ps1",
+    "Extract.cs",
+    "Install.cmd",
+    "Select-Game.ps1"
+  ],
+  "python_sources_parse": true,
+  "excluded_proprietary_assets_and_binaries": true,
+  "source_file_count": 81
+}

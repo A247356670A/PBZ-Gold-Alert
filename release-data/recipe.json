@@ -1,0 +1,128 @@
+{
+  "version": "2.0",
+  "distribution": "combined",
+  "source_development": "2.0.5",
+  "base_toc_sha256": "d5c3764cdae2030361a7fa8ed1eb204787c77e767df92bbe947763b4a2d0186b",
+  "files": {
+    "zz_PBZ_YellowAlert_P.pak": {
+      "bytes": 580785,
+      "sha256": "b74dcd4f5e6d115877df2210d934aa226a56d30beda7f6547608565cbf8cc5b5"
+    },
+    "zz_PBZ_YellowAlert_P.ucas": {
+      "bytes": 1413258828,
+      "sha256": "c9370e773026ed7c2c05f50b3a0c38e592a8b405132eabfb6a2153adfabad5f9"
+    },
+    "zz_PBZ_YellowAlert_P.utoc": {
+      "bytes": 284686,
+      "sha256": "2c09850735d5479635b2d5f50dc608a82f174e008050c04e180d27b1f86bb4f4"
+    }
+  },
+  "reconstructed_file": "zz_PBZ_YellowAlert_P.ucas",
+  "parts": [
+    {
+      "kind": "literal",
+      "payload_offset": 0,
+      "bytes": 2166091
+    },
+    {
+      "kind": "base",
+      "cid": "5aac5b9f482230fd00000002",
+      "base_bytes": 161045759,
+      "target_bytes": 161046785,
+      "tail": {
+        "payload_offset": 2166197,
+        "bytes": 1026
+      },
+      "patches": [
+        {
+          "offset": 155099650,
+          "payload_offset": 2166091,
+          "bytes": 88
+        },
+        {
+          "offset": 155100618,
+          "payload_offset": 2166179,
+          "bytes": 4
+        },
+        {
+          "offset": 159267085,
+          "payload_offset": 2166183,
+          "bytes": 14
+        }
+      ]
+    },
+    {
+      "kind": "literal",
+      "payload_offset": 2167223,
+      "bytes": 3057937
+    },
+    {
+      "kind": "base",
+      "cid": "e769c85cabe3aa8400000002",
+      "base_bytes": 781392766,
+      "target_bytes": 781789664,
+      "tail": {
+        "payload_offset": 6340032,
+        "bytes": 396898
+      },
+      "patches": [
+        {
+          "offset": 45223241,
+          "payload_offset": 5225160,
+          "bytes": 57488
+        },
+        {
+          "offset": 45351120,
+          "payload_offset": 5282648,
+          "bytes": 182235
+        },
+        {
+          "offset": 345938312,
+          "payload_offset": 5464883,
+          "bytes": 57488
+        },
+        {
+          "offset": 346030288,
+          "payload_offset": 5522371,
+          "bytes": 167583
+        },
+        {
+          "offset": 425830623,
+          "payload_offset": 5689954,
+          "bytes": 57568
+        },
+        {
+          "offset": 425984128,
+          "payload_offset": 5747522,
+          "bytes": 356310
+        },
+        {
+          "offset": 500345583,
+          "payload_offset": 6103832,
+          "bytes": 57496
+        },
+        {
+          "offset": 500433096,
+          "payload_offset": 6161328,
+          "bytes": 178704
+        }
+      ]
+    },
+    {
+      "kind": "literal",
+      "payload_offset": 6736930,
+      "bytes": 551175
+    },
+    {
+      "kind": "base",
+      "cid": "ff58522d74ff149400000002",
+      "base_bytes": 463454137,
+      "target_bytes": 464647176,
+      "tail": {
+        "payload_offset": 7288105,
+        "bytes": 1193039
+      },
+      "patches": []
+    }
+  ]
+}

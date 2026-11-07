@@ -1,0 +1,31 @@
+{
+  "fullpack_triplet_exact_V205": {
+    "zz_PBZ_YellowAlert_P.pak": "b74dcd4f5e6d115877df2210d934aa226a56d30beda7f6547608565cbf8cc5b5",
+    "zz_PBZ_YellowAlert_P.ucas": "c9370e773026ed7c2c05f50b3a0c38e592a8b405132eabfb6a2153adfabad5f9",
+    "zz_PBZ_YellowAlert_P.utoc": "2c09850735d5479635b2d5f50dc608a82f174e008050c04e180d27b1f86bb4f4"
+  },
+  "delta_stats": [
+    {
+      "cid": "5aac5b9f482230fd00000002",
+      "changed_bytes": 16,
+      "tail_bytes": 1026,
+      "patches": 3
+    },
+    {
+      "cid": "e769c85cabe3aa8400000002",
+      "changed_bytes": 1035413,
+      "tail_bytes": 396898,
+      "patches": 8
+    },
+    {
+      "cid": "ff58522d74ff149400000002",
+      "changed_bytes": 0,
+      "tail_bytes": 1193039,
+      "patches": 0
+    }
+  ],
+  "payload_bytes": 8481144,
+  "native_containers_not_repacked": true,
+  "audio_and_trigger_timing_unchanged": true,
+  "gameplay_bytes_unchanged": true
+}
